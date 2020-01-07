@@ -1,11 +1,11 @@
 #include <xc.h>
-#include <p18f4520.h>
+#include <pic18f4520.h>
 #include "conbits.h"
 #include "stdint.h"
 #include "stdbool.h"
 
-void interrupt high_isr(void);
-void interrupt low_priority low_isr(void);
+void __interrupt() high_isr(void);
+void __interrupt(low_priority) low_isr(void);
 
 uint8_t blink_count = 0;
 uint8_t button_count = 0;
@@ -65,7 +65,7 @@ void main(void) {
     } 
 }
 
-void interrupt high_isr(void){
+void __interrupt() high_isr(void){
     INTCONbits.GIEH = 0;
     
     if(INTCONbits.TMR0IF){
@@ -79,7 +79,7 @@ void interrupt high_isr(void){
     INTCONbits.GIEH = 1;
 }
 
-void interrupt low_priority low_isr(void){
+void __interrupt(low_priority) low_isr(void){
     INTCONbits.GIEH = 0;
     INTCONbits.GIEH = 1;
 }
