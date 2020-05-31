@@ -9,6 +9,9 @@ This video Demonstrates how to change frequency of the internal oscillator, set 
 Shekels: 
 https://www.paypal.me/bindertronics9/5
 
+Patreon:
+https://www.patreon.com/BinderTronics
+
 Bitcoin: 
 19nohZzWXxVuZ9tZvw8Pvhajt5khG5mspW
 
